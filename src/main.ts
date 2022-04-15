@@ -9,9 +9,8 @@ const setup = async () => {
     const app = createApp(App)
     const pinia = createPinia()
     app.use(pinia)
-    const skill = useSkillStore()
     app.use(router)
     app.mount('#app')
 }
 
-await setup()
+setup()
