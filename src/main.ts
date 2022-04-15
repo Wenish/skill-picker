@@ -1,7 +1,6 @@
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'
 import App from './App.vue'
-import { useSkillStore } from './store/skill.store'
 import './index.css'
 import router from './router'
 
