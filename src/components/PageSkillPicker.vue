@@ -4,7 +4,7 @@
         <div>
             <div class="skill-list-title">{{ skillSlotsStore.getSelectedSkillSlot?.type }}</div>
             <div class="skill-list">
-                <Popper hover v-for="skill in skillSlotsStore.getSelectedSkillSlotSkills" :key="skill.id" :content="skill.description" arrow>
+                <Popper hover v-for="skill in skillSlotsStore.getSelectedSkillSlotSkills" :key="skill.id" :content="`${skill.title} - ${skill.description}`" arrow>
                 <div class="skill-list-item"
                     @click="skillSlotsStore.selectSkill(skillSlotsStore.selectedSkillSlotIndex, skill.id)">
                     <div class="skill-list-item-image">
@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="skill-slots">
-            <Popper hover v-for="(skillSlot, index) in skillSlotsStore.skillSlots" :key="index" :content="skillStore.getSkillById(skillSlot.skillId || '')?.description" arrow>
+            <Popper v-for="(skillSlot, index) in skillSlotsStore.skillSlots" :key="index" hover :disabled="!skillStore.getSkillById(skillSlot.skillId || '')?.title" :content="`${skillStore.getSkillById(skillSlot.skillId || '')?.title || ''} - ${skillStore.getSkillById(skillSlot.skillId || '')?.description || ''}`" arrow>
                 <div :class="['skill-slot', skillSlot.type.toLowerCase(), { selected: skillSlotsStore.selectedSkillSlotIndex == index }]"
                     @click="skillSlotsStore.selectedSkillSlotIndex = index">
                     <img :src="getImageUrl(skillStore.getSkillById(skillSlot.skillId).icon)" v-if="skillSlot.skillId"/>

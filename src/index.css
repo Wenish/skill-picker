@@ -30,4 +30,5 @@ html, body, #app {
     max-width: 200px;
     text-align: left;
     font-size: 1.5rem;
+    word-break: break-word;
 }
