@@ -62,7 +62,7 @@ export const mockSkills: Skill[] = [
     {
         id: '6',
         title: 'Resurrection',
-        description: 'Resurrection an ally player with full health.',
+        description: 'Revive an ally player with full health.',
         cooldown: 120,
         type: SkillType.ULTIMATE,
         icon: 'Light_of_Deliverance.jpg'
@@ -80,7 +80,7 @@ export const mockSkills: Skill[] = [
     {
         id: '8',
         title: 'Way of the Wanderer',
-        description: 'Gain every second you move 1 shield up to 50.',
+        description: 'Gain every second you move 1 shield up to 20.',
         cooldown: 0,
         type: SkillType.PASSIVE,
         icon: 'Aegis.jpg'
@@ -147,5 +147,122 @@ export const mockSkills: Skill[] = [
         cooldown: 60,
         type: SkillType.ULTIMATE,
         icon: 'Grenths_Grasp.jpg'
+    },
+
+    {
+        id: '16',
+        title: 'Sundering Weapon',
+        description: 'Your attacks deal 5 more damage.',
+        cooldown: 0,
+        type: SkillType.PASSIVE,
+        icon: 'Sundering_Weapon.jpg'
+    },
+
+    {
+        id: '17',
+        title: 'Smoke Poweder Defense',
+        description: 'Throw a smoke poweder which restricts enemy vision.',
+        cooldown: 40,
+        type: SkillType.NORMAL,
+        icon: 'Smoke_Powder_Defense.jpg'
+    },
+
+    {
+        id: '18',
+        title: 'Assassin Strike',
+        description: 'Jump to an enemy and strike him for 10 damage.',
+        cooldown: 40,
+        type: SkillType.NORMAL,
+        icon: 'Assassin_Remedy.jpg'
+    },
+
+    {
+        id: '19',
+        title: 'Essence Strike',
+        description: 'Cast a lightning which does 30 damage.',
+        cooldown: 35,
+        type: SkillType.NORMAL,
+        icon: 'Essence_Strike.jpg'
+    },
+
+    {
+        id: '20',
+        title: 'Caltrops',
+        description: 'Place a trap on the floor, which deals 5 damage per second when a enemy walks over it.',
+        cooldown: 35,
+        type: SkillType.NORMAL,
+        icon: 'Caltrops.jpg'
+    },
+
+    {
+        id: '21',
+        title: 'Preservation',
+        description: 'Summon a ghost which heals nearby allys for 20 health over 5 seconds every 10 seconds.',
+        cooldown: 70,
+        type: SkillType.ULTIMATE,
+        icon: 'Preservation.jpg'
+    },
+
+    {
+        id: '22',
+        title: 'Shadow Form',
+        description: 'For 15 seconds move 10% faster and only receive 50% of incoming damage.',
+        cooldown: 70,
+        type: SkillType.ULTIMATE,
+        icon: 'Shadow_Form.jpg'
+    },
+
+    {
+        id: '23',
+        title: 'Vital Weapon',
+        description: 'When you strik an enemy it also deals 3 damage to nearby enemies.',
+        cooldown: 0,
+        type: SkillType.PASSIVE,
+        icon: 'Vital_Weapon.jpg'
+    },
+
+    {
+        id: '24',
+        title: 'Ghostmirror Light',
+        description: 'Creates a fake mirror image of yourself.',
+        cooldown: 25,
+        type: SkillType.NORMAL,
+        icon: 'Ghostmirror_Light.jpg'
+    },
+
+    {
+        id: '25',
+        title: 'Apply Poison',
+        description: 'Your ranged attacks poison the enemy for 5 seconds which deals 2 damage per second.',
+        cooldown: 0,
+        type: SkillType.PASSIVE,
+        icon: 'Apply_Poison.jpg'
+    },
+
+    {
+        id: '26',
+        title: 'Barrage',
+        description: 'Shot a quick volley of arrows each arrow deals 20 damage.',
+        cooldown: 50,
+        type: SkillType.ULTIMATE,
+        icon: 'Barrage.jpg'
+    },
+
+    {
+        id: '27',
+        title: 'Dodge',
+        description: 'Quickly dash a short distance into a direction.',
+        cooldown: 30,
+        type: SkillType.NORMAL,
+        icon: 'Dodge.jpg'
+    },
+
+    {
+        id: '28',
+        title: 'Pin Down',
+        description: 'Shot an arrow which slows the enemy for 30% over 5 seconds.',
+        cooldown: 35,
+        type: SkillType.NORMAL,
+        icon: 'Pin_Down.jpg'
     }
 ]

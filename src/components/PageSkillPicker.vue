@@ -11,7 +11,7 @@
                         <img :src="getImageUrl(skill.icon)" />
                     </div>
                     <div class="skill-list-item-title">{{ skill.title }}</div>
-                    <div class="skill-list-item-cooldown">{{ skill.cooldown }}&#9735;</div>
+                    <div class="skill-list-item-cooldown"><span v-if="skill.cooldown">{{ skill.cooldown }}&#9735;</span></div>
                 </div>
                 </Popper>
             </div>

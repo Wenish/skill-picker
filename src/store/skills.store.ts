@@ -17,7 +17,9 @@ export const useSkillsStore = defineStore(
         }
 
         const getSkills = computed(() => {
-            return Object.keys(skills).map((key) => skills[key])
+            return Object.keys(skills).map((key) => skills[key]).sort((a, b) =>
+            a.title.localeCompare(b.title),
+          )
         })
 
         const getSkillsPassive = computed(() => {
