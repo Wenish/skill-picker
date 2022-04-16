@@ -53,9 +53,11 @@ export const useSkillSlotsStore = defineStore(
                 }
             })
             skillSlots.value[skillSlotIndex].skillId = skillId
+            /*
             if(selectedSkillSlotIndex.value < skillSlots.value.length - 1) {
                 selectedSkillSlotIndex.value++
             }
+            */
         }
 
         return {
@@ -64,6 +66,11 @@ export const useSkillSlotsStore = defineStore(
             getSelectedSkillSlot,
             getSelectedSkillSlotSkills,
             selectSkill
+        }
+    },
+    {
+        persist: {
+            paths: ['skillSlots']
         }
     }
 )

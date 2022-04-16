@@ -135,7 +135,7 @@ const getImageUrl = (name: string) => {
 }
 
 .skill-slot.selected {
-    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.9);
 }
 
 .skill-slot.passive {
