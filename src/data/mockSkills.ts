@@ -115,19 +115,37 @@ export const mockSkills: Skill[] = [
 
     {
         id: '12',
-        title: 'Test',
-        description: 'Test',
-        cooldown: 0,
+        title: 'Animate Flesh Golem',
+        description: 'Exploit a fresh corpse to create a flesh golem.',
+        cooldown: 40,
+        type: SkillType.ULTIMATE,
+        icon: 'Animate_Flesh_Golem.jpg'
+    },
+
+    {
+        id: '13',
+        title: 'Blackout',
+        description: 'Disables skills from nearby enemies for 6 seconds.',
+        cooldown: 40,
         type: SkillType.NORMAL,
         icon: 'Blackout.jpg'
     },
 
     {
-        id: '13',
-        title: 'Test Suuuuuuuuuuuuuuuuuuuuuuper Long Text.',
-        description: 'Test',
-        cooldown: 0,
-        type: SkillType.NORMAL,
-        icon: 'Blackout.jpg'
+        id: '14',
+        title: 'Signet of Return',
+        description: '5 seconds after taking damage gain 50 health back.',
+        cooldown: 30,
+        type: SkillType.PASSIVE,
+        icon: 'Signet_of_Return.jpg'
+    },
+
+    {
+        id: '15',
+        title: 'Grenths Grasp',
+        description: 'For 10 seconds lifesteal 70% of your damage dealt.',
+        cooldown: 60,
+        type: SkillType.ULTIMATE,
+        icon: 'Grenths_Grasp.jpg'
     }
 ]
