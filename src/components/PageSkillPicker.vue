@@ -2,7 +2,7 @@
     <div class="page">
         <div class="title">Skill Picker</div>
         <div>
-            <div class="skill-list-title">{{ }}</div>
+            <div class="skill-list-title">{{ skillSlotsStore.getSelectedSkillSlot?.type }}</div>
             <div class="skill-list">
                 <div class="skill-list-item" v-for="skill in skillSlotsStore.getSelectedSkillSlotSkills" :key="skill.id"
                     @click="skillSlotsStore.selectSkill(skillSlotsStore.selectedSkillSlotIndex, skill.id)">
