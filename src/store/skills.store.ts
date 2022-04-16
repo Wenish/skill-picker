@@ -38,6 +38,10 @@ export const useSkillsStore = defineStore(
             })
         })
 
+        const getSkillById = (id: string) => {
+            return skills[id]
+        }
+
         loadSkills()
 
         return {
@@ -46,7 +50,8 @@ export const useSkillsStore = defineStore(
             getSkillsPassive,
             getSkillsNormal,
             getSkillsUltimate,
-            loadSkills
+            loadSkills,
+            getSkillById
         }
     },
 )

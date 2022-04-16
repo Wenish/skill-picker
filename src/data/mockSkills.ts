@@ -10,6 +10,7 @@ export interface Skill {
     description: string
     cooldown: number
     type: SkillType
+    icon: string
 }
 
 export const mockSkills: Skill[] = [
@@ -18,7 +19,8 @@ export const mockSkills: Skill[] = [
         title: 'Heal Party',
         description: 'Heals entire party for 20 over 5 seconds',
         cooldown: 40,
-        type: SkillType.NORMAL
+        type: SkillType.NORMAL,
+        icon: 'Heal_Party.jpg'
     },
 
     {
@@ -26,7 +28,8 @@ export const mockSkills: Skill[] = [
         title: 'Shield Guard',
         description: 'Shields a player for 25.',
         cooldown: 30,
-        type: SkillType.NORMAL
+        type: SkillType.NORMAL,
+        icon: 'Reversal_of_Fortune.jpg'
     },
 
     {
@@ -34,7 +37,8 @@ export const mockSkills: Skill[] = [
         title: 'Shiedling Hands',
         description: 'Reduces incoming damage by 3 for 20 seconds.',
         cooldown: 40,
-        type: SkillType.NORMAL
+        type: SkillType.NORMAL,
+        icon: 'Shielding_Hands.jpg'
     },
 
     {
@@ -42,7 +46,8 @@ export const mockSkills: Skill[] = [
         title: 'Word of Healing',
         description: 'Heals for 30. Heals for 60 more if target ally is below 50% health over 5 seconds.',
         cooldown: 60,
-        type: SkillType.ULTIMATE
+        type: SkillType.ULTIMATE,
+        icon: 'Word_of_Healing.jpg'
     },
 
     {
@@ -50,7 +55,8 @@ export const mockSkills: Skill[] = [
         title: 'Barrier',
         description: 'Places a solid wall over 40 seconds',
         cooldown: 60,
-        type: SkillType.NORMAL
+        type: SkillType.NORMAL,
+        icon: 'Armor_of_Earth.jpg'
     },
 
     {
@@ -58,7 +64,8 @@ export const mockSkills: Skill[] = [
         title: 'Resurrection',
         description: 'Resurrection an ally player with full health',
         cooldown: 120,
-        type: SkillType.ULTIMATE
+        type: SkillType.ULTIMATE,
+        icon: 'Light_of_Deliverance.jpg'
     },
 
     {
@@ -66,7 +73,8 @@ export const mockSkills: Skill[] = [
         title: 'Draining Aura',
         description: 'Drain every second 1 life from enemies nearby.',
         cooldown: 0,
-        type: SkillType.PASSIVE
+        type: SkillType.PASSIVE,
+        icon: 'Arcane_Mimicry.jpg'
     },
 
     {
@@ -74,7 +82,8 @@ export const mockSkills: Skill[] = [
         title: 'Way of the Wanderer',
         description: 'Gain every second you move 1 shield up to 50',
         cooldown: 0,
-        type: SkillType.PASSIVE
+        type: SkillType.PASSIVE,
+        icon: 'Aegis.jpg'
     },
 
     {
@@ -82,7 +91,8 @@ export const mockSkills: Skill[] = [
         title: 'Test Suuuuuuuuuuuuuuuuuuuuuuper Long Text',
         description: 'Test',
         cooldown: 0,
-        type: SkillType.NORMAL
+        type: SkillType.NORMAL,
+        icon: 'Blackout.jpg'
     },
 
     {
@@ -90,7 +100,8 @@ export const mockSkills: Skill[] = [
         title: 'Test',
         description: 'Test',
         cooldown: 0,
-        type: SkillType.NORMAL
+        type: SkillType.NORMAL,
+        icon: 'Blackout.jpg'
     },
 
     {
@@ -98,7 +109,8 @@ export const mockSkills: Skill[] = [
         title: 'Test',
         description: 'Test',
         cooldown: 0,
-        type: SkillType.NORMAL
+        type: SkillType.NORMAL,
+        icon: 'Blackout.jpg'
     },
 
     {
@@ -106,7 +118,8 @@ export const mockSkills: Skill[] = [
         title: 'Test',
         description: 'Test',
         cooldown: 0,
-        type: SkillType.NORMAL
+        type: SkillType.NORMAL,
+        icon: 'Blackout.jpg'
     },
 
     {
@@ -114,6 +127,7 @@ export const mockSkills: Skill[] = [
         title: 'Test',
         description: 'Test',
         cooldown: 0,
-        type: SkillType.NORMAL
+        type: SkillType.NORMAL,
+        icon: 'Blackout.jpg'
     }
 ]

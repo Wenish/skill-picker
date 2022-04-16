@@ -2,10 +2,13 @@
     <div class="page">
         <div class="title">Skill Picker</div>
         <div>
-            <div class="skill-list-title">{{  }}</div>
+            <div class="skill-list-title">{{ }}</div>
             <div class="skill-list">
-                <div class="skill-list-item" v-for="skill in skillSlotsStore.getSelectedSkillSlotSkills" :key="skill.id" @click="skillSlotsStore.selectSkill(skillSlotsStore.selectedSkillSlotIndex, skill.id)">
-                    <div class="skill-list-item-image"></div>
+                <div class="skill-list-item" v-for="skill in skillSlotsStore.getSelectedSkillSlotSkills" :key="skill.id"
+                    @click="skillSlotsStore.selectSkill(skillSlotsStore.selectedSkillSlotIndex, skill.id)">
+                    <div class="skill-list-item-image">
+                        <img :src="getImageUrl(skill.icon)" />
+                    </div>
                     <div class="skill-list-item-title">{{ skill.title }}</div>
                     <div class="skill-list-item-cooldown">{{ skill.cooldown }}&#9735;</div>
                 </div>
@@ -14,17 +17,22 @@
         <div class="skill-slots">
             <div v-for="(skillSlot, index) in skillSlotsStore.skillSlots" :key="index"
                 :class="['skill-slot', skillSlot.type.toLowerCase(), { selected: skillSlotsStore.selectedSkillSlotIndex == index }]"
-                @click="skillSlotsStore.selectedSkillSlotIndex = index"
-            >
-            {{ skillSlot.skillId }}
+                @click="skillSlotsStore.selectedSkillSlotIndex = index">
+                <img :src="getImageUrl(skillStore.getSkillById(skillSlot.skillId).icon)" v-if="skillSlot.skillId"/>
             </div>
         </div>
     </div>
 </template>
 <script setup lang="ts">
+import { useSkillsStore } from '../store/skills.store';
 import { useSkillSlotsStore } from '../store/skillSlots.store';
 
+const skillStore = useSkillsStore()
 const skillSlotsStore = useSkillSlotsStore()
+
+const getImageUrl = (name: string) => {
+  return new URL(`../assets/skillIcons/${name}`, import.meta.url).href
+}
 </script>
 <style scoped>
 .page-wrapper {
@@ -60,7 +68,6 @@ const skillSlotsStore = useSkillSlotsStore()
     border: 1px solid grey;
     height: 350px;
     overflow-y: scroll;
-
 }
 
 .skill-list-item {
@@ -91,6 +98,11 @@ const skillSlotsStore = useSkillSlotsStore()
     background-color: grey;
 }
 
+.skill-list-item-image > img {
+    width: 100%;
+    height: 100%;
+}
+
 .skill-slots {
     display: flex;
     justify-content: space-between;
@@ -100,7 +112,6 @@ const skillSlotsStore = useSkillSlotsStore()
 .skill-slot {
     width: 50px;
     height: 50px;
-    border: 1px solid black;
     background-color: hsl(0, 0%, 80%);
     cursor: pointer;
     display: flex;
@@ -113,6 +124,11 @@ const skillSlotsStore = useSkillSlotsStore()
     background-color: hsl(0, 0%, 76%);
 }
 
+.skill-slot > img {
+    width: 100%;
+    height: 100%;
+}
+
 .skill-slot.selected {
     box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
 }
@@ -123,14 +139,9 @@ const skillSlotsStore = useSkillSlotsStore()
     margin-right: 2rem;
 }
 
-.skill-slot.normal {
-    border-width: 3px;
-}
 
 .skill-slot.ultimate {
     margin-left: 1rem;
-    border-width: 3px;
-    border-color: gold;
 }
 
 ::-webkit-scrollbar {
