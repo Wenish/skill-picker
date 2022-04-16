@@ -97,20 +97,20 @@ export const mockSkills: Skill[] = [
 
     {
         id: '10',
-        title: 'Test',
-        description: 'Test',
-        cooldown: 0,
+        title: 'Dash',
+        description: 'You move 50% faster for 3 seconds',
+        cooldown: 30,
         type: SkillType.NORMAL,
-        icon: 'Blackout.jpg'
+        icon: 'Dash.jpg'
     },
 
     {
         id: '11',
-        title: 'Test',
-        description: 'Test',
-        cooldown: 0,
+        title: 'Critical Eye',
+        description: 'You deal 5 more damage for 5 seconds',
+        cooldown: 40,
         type: SkillType.NORMAL,
-        icon: 'Blackout.jpg'
+        icon: 'Critical_Eye.jpg'
     },
 
     {

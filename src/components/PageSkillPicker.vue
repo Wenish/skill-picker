@@ -4,7 +4,8 @@
         <div>
             <div class="skill-list-title">{{ skillSlotsStore.getSelectedSkillSlot?.type }}</div>
             <div class="skill-list">
-                <div class="skill-list-item" v-for="skill in skillSlotsStore.getSelectedSkillSlotSkills" :key="skill.id"
+                <Popper hover v-for="skill in skillSlotsStore.getSelectedSkillSlotSkills" :key="skill.id" :content="skill.description" arrow>
+                <div class="skill-list-item"
                     @click="skillSlotsStore.selectSkill(skillSlotsStore.selectedSkillSlotIndex, skill.id)">
                     <div class="skill-list-item-image">
                         <img :src="getImageUrl(skill.icon)" />
@@ -12,18 +13,21 @@
                     <div class="skill-list-item-title">{{ skill.title }}</div>
                     <div class="skill-list-item-cooldown">{{ skill.cooldown }}&#9735;</div>
                 </div>
+                </Popper>
             </div>
         </div>
         <div class="skill-slots">
-            <div v-for="(skillSlot, index) in skillSlotsStore.skillSlots" :key="index"
-                :class="['skill-slot', skillSlot.type.toLowerCase(), { selected: skillSlotsStore.selectedSkillSlotIndex == index }]"
-                @click="skillSlotsStore.selectedSkillSlotIndex = index">
-                <img :src="getImageUrl(skillStore.getSkillById(skillSlot.skillId).icon)" v-if="skillSlot.skillId"/>
-            </div>
+            <Popper hover v-for="(skillSlot, index) in skillSlotsStore.skillSlots" :key="index" :content="skillStore.getSkillById(skillSlot.skillId || '')?.description" arrow>
+                <div :class="['skill-slot', skillSlot.type.toLowerCase(), { selected: skillSlotsStore.selectedSkillSlotIndex == index }]"
+                    @click="skillSlotsStore.selectedSkillSlotIndex = index">
+                    <img :src="getImageUrl(skillStore.getSkillById(skillSlot.skillId).icon)" v-if="skillSlot.skillId"/>
+                </div>
+            </Popper>
         </div>
     </div>
 </template>
 <script setup lang="ts">
+import Popper from "vue3-popper";
 import { useSkillsStore } from '../store/skills.store';
 import { useSkillSlotsStore } from '../store/skillSlots.store';
 
@@ -68,6 +72,7 @@ const getImageUrl = (name: string) => {
     border: 1px solid grey;
     height: 350px;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .skill-list-item {
