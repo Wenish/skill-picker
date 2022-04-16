@@ -97,7 +97,7 @@ export const mockSkills: Skill[] = [
 
     {
         id: '10',
-        title: 'Dash',
+        title: 'Swiftness',
         description: 'You move 50% faster for 3 seconds.',
         cooldown: 30,
         type: SkillType.NORMAL,
