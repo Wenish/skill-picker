@@ -2,9 +2,9 @@
     <div class="page">
         <div class="title">Skill Picker</div>
         <div>
-            <div class="skill-list-title">Passive / Normal / Ultimate</div>
+            <div class="skill-list-title">{{  }}</div>
             <div class="skill-list">
-                <div class="skill-list-item" v-for="skill in skills" :key="skill.id">
+                <div class="skill-list-item" v-for="skill in skillSlotsStore.getSelectedSkillSlotSkills" :key="skill.id" @click="skillSlotsStore.selectSkill(skillSlotsStore.selectedSkillSlotIndex, skill.id)">
                     <div class="skill-list-item-image"></div>
                     <div class="skill-list-item-title">{{ skill.title }}</div>
                     <div class="skill-list-item-cooldown">{{ skill.cooldown }}&#9735;</div>
@@ -12,19 +12,21 @@
             </div>
         </div>
         <div class="skill-slots">
-            <div class="skill-slot passive"></div>
-            <div class="skill-slot normal"></div>
-            <div class="skill-slot normal selected"></div>
-            <div class="skill-slot normal"></div>
-            <div class="skill-slot ultimate"></div>
+            <div v-for="(skillSlot, index) in skillSlotsStore.skillSlots" :key="index"
+                :class="['skill-slot', skillSlot.type.toLowerCase(), { selected: skillSlotsStore.selectedSkillSlotIndex == index }]"
+                @click="skillSlotsStore.selectedSkillSlotIndex = index"
+            >
+            {{ skillSlot.skillId }}
+            </div>
         </div>
     </div>
 </template>
-<script setup lang="ts">import { useSkillStore } from '../store/skill.store';
+<script setup lang="ts">
+import { useSkillSlotsStore } from '../store/skillSlots.store';
 
-const { skills } = useSkillStore()
+const skillSlotsStore = useSkillSlotsStore()
 </script>
-<style>
+<style scoped>
 .page-wrapper {
     display: grid;
     justify-items: center;
@@ -101,6 +103,9 @@ const { skills } = useSkillStore()
     border: 1px solid black;
     background-color: hsl(0, 0%, 80%);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .skill-slot:hover {
@@ -109,7 +114,7 @@ const { skills } = useSkillStore()
 }
 
 .skill-slot.selected {
-    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
 }
 
 .skill-slot.passive {
@@ -128,11 +133,22 @@ const { skills } = useSkillStore()
     border-color: gold;
 }
 
-.skill-slot.ultimate:hover {
-    box-shadow: 0px 0px 5px 1px rgba(206, 219, 20, 0.3);
+::-webkit-scrollbar {
+    width: 10px;
 }
 
-.skill-slot.ultimate.selected {
-    box-shadow: 0px 0px 5px 1px rgba(206, 219, 20, 0.3);
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 </style>

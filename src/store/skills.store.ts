@@ -1,9 +1,10 @@
 import { defineStore } from "pinia";
 import { computed, reactive } from "vue";
 import { mockSkills, Skill, SkillType } from "../data/mockSkills";
+import { useSkillSlotsStore } from "./skillSlots.store";
 
-export const useSkillStore = defineStore(
-    'skill',
+export const useSkillsStore = defineStore(
+    'skills',
     () => {
         const skills = reactive<{
             [key: string]: Skill
@@ -36,7 +37,6 @@ export const useSkillStore = defineStore(
                 return skill.type == SkillType.ULTIMATE
             })
         })
-
 
         loadSkills()
 
