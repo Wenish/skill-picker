@@ -24,6 +24,7 @@
                 </div>
             </Popper>
         </div>
+        <button @click="skillSlotsStore.resetSkillSelection()">Reset skill selection</button>
     </div>
 </template>
 <script setup lang="ts">

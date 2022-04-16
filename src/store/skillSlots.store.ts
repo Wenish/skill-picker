@@ -60,12 +60,19 @@ export const useSkillSlotsStore = defineStore(
             */
         }
 
+        const resetSkillSelection = () => {
+            skillSlots.value.forEach((skillSlot) => {
+                skillSlot.skillId = null
+            })
+        }
+
         return {
             skillSlots,
             selectedSkillSlotIndex,
             getSelectedSkillSlot,
             getSelectedSkillSlotSkills,
-            selectSkill
+            selectSkill,
+            resetSkillSelection
         }
     },
     {
