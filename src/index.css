@@ -20,6 +20,7 @@
 
     /* dark */
     --brand-dark: hsl(var(--brand-hue) var(--brand-saturation) var(--brand-lightness));
+    --brand-hover-dark: hsl(var(--brand-hue) var(--brand-saturation) calc(var(--brand-lightness) - 3%));
 
     --text-1-dark: hsl(195 54% 78%);
     --text-2-dark: hsl(197 51% 69%);
@@ -37,6 +38,7 @@
     color-scheme: dark;
 
     --brand: var(--brand-dark);
+    --brand-hover: var(--brand-hover-dark);
     --text-1: var(--text-1-dark);
     --text-2: var(--text-2-dark);
     --text-on-brand: var(--text-on-brand-dark);
@@ -103,4 +105,18 @@ html, body, #app {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: var(--surface-4);
+}
+
+button {
+    background-color: var(--brand);
+    border: 1px solid var(--border-color);
+    color: var(--text-on-brand);
+    border-radius: var(--border-radius);
+    padding: 0.3em;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--brand-hover);
 }

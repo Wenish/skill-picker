@@ -114,12 +114,15 @@ const getImageUrl = (name: string) => {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    padding: 2rem;
+    background-color: var(--surface-2);
+    border: 1px solid var(--border-color);
 }
 
 .skill-slot {
     width: 50px;
     height: 50px;
-    background-color: var(--surface-2);
+    background-color: var(--surface-3);
     cursor: pointer;
     display: flex;
     align-items: center;
