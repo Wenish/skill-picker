@@ -54,7 +54,10 @@
     padding: 3rem;
     display: inline-block;
     box-shadow: 0px 0px 3px 1px #0000007c;
-    border: 1px solid hsl(var(--brand-hue) 10% 50% / 15%);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--border-color);
+    border-radius: var(--border-radius);
 }
 
 .surface-1 {

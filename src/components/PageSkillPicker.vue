@@ -70,10 +70,11 @@ const getImageUrl = (name: string) => {
 .skill-list {
     display: flex;
     flex-direction: column;
-    border: 1px solid grey;
+    border: 1px solid var(--border-color);
     height: 350px;
     overflow-y: scroll;
     overflow-x: hidden;
+    background-color: var(--surface-2);
 }
 
 .skill-list-item {
@@ -83,11 +84,11 @@ const getImageUrl = (name: string) => {
     gap: 0.2rem;
     align-items: center;
     cursor: pointer;
-    padding-block: 0.3rem;
+    padding: 0.4rem;
 }
 
 .skill-list-item:hover {
-    background-color: antiquewhite;
+    background-color: var(--surface-4);
 }
 
 .skill-list-item-title {
@@ -101,7 +102,7 @@ const getImageUrl = (name: string) => {
     width: 3rem;
     height: 3rem;
     margin: 0.3rem;
-    background-color: grey;
+    background-color: var(--surface-3);
 }
 
 .skill-list-item-image > img {
@@ -118,7 +119,7 @@ const getImageUrl = (name: string) => {
 .skill-slot {
     width: 50px;
     height: 50px;
-    background-color: hsl(0, 0%, 80%);
+    background-color: var(--surface-2);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -127,7 +128,7 @@ const getImageUrl = (name: string) => {
 
 .skill-slot:hover {
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
-    background-color: hsl(0, 0%, 76%);
+    background-color: var(--surface-4);
 }
 
 .skill-slot > img {
@@ -148,24 +149,5 @@ const getImageUrl = (name: string) => {
 
 .skill-slot.ultimate {
     margin-left: 1rem;
-}
-
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #888;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
 }
 </style>
