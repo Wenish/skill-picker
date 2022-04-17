@@ -1,7 +1,54 @@
+/*
+ color1: #012A4A - 206, 97, 15
+ color2: #013A63 - 205, 98, 20
+ color3: #01497C - 205, 98, 25
+ color4: #014F86 - 205, 99, 26
+ color5: #2A6F97 - 202, 56, 38
+ color6: #2C7DA0 - 198, 57, 40
+ color7: #468FAF - 198, 43, 48
+ color8: #61A5C2 - 198, 44, 57
+ color9: #89C2D9 - 197, 51, 69
+ color10: #A9D6E5 - 195, 54, 78
+*/
+
+* {
+    /* brand foundation */
+    --brand-hue: 198;
+    --brand-saturation: 57%;
+    --brand-lightness: 40%;
+
+
+    /* dark */
+    --brand-dark: hsl(var(--brand-hue) var(--brand-saturation) var(--brand-lightness));
+
+    --text-1-dark: hsl(var(--brand-hue) 15% 85%);
+    --text-2-dark: hsl(var(--brand-hue) 5% 65%);
+    --text-on-brand-dark: hsl(var(--brand-hue) 5% 95%);
+
+    --surface-1-dark: hsl(var(--brand-hue) 2% 8%);
+    --surface-2-dark: hsl(var(--brand-hue) 4% 13%);
+    --surface-3-dark: hsl(var(--brand-hue) 6% 22%);
+    --surface-4-dark: hsl(var(--brand-hue) 8% 25%);
+}
+
+:root {
+    color-scheme: dark;
+
+    --brand: var(--brand-dark);
+    --text-1: var(--text-1-dark);
+    --text-2: var(--text-2-dark);
+    --text-on-brand: var(--text-on-brand-dark);
+
+    --surface-1: var(--surface-1-dark);
+    --surface-2: var(--surface-2-dark);
+    --surface-3: var(--surface-3-dark);
+    --surface-4: var(--surface-4-dark);
+}
+
 html {
-    background-color: hsl(0, 0%, 95%);
+    background-color: var(--surface-1);
+    color: var(--text-1);
     font-size: 10px;
-    color: #2c3e50;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -9,6 +56,7 @@ html {
 
 body {
     margin: 0;
+    font-size: 1.8rem;
 }
 
 html, body, #app {

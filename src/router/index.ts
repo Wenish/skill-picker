@@ -4,6 +4,10 @@ const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
         component: () => import('../components/PageSkillPicker.vue'),
+    },
+    {
+        path: '/theme',
+        component: () => import('../components/PageTheme.vue'),
     }
 ]
 
