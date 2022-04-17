@@ -11,6 +11,30 @@
  color10: #A9D6E5 - 195, 54, 78
 */
 
+@font-face {
+    font-family: Oxygen;
+    src: url('assets/fonts/oxygen/Oxygen-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Oxygen;
+    src: url('assets/fonts/oxygen/Oxygen-Light.ttf');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Oxygen;
+    src: url('assets/fonts/oxygen/Oxygen-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
 * {
     /* brand foundation */
     --brand-hue: 198;
@@ -26,7 +50,7 @@
     --text-2-dark: hsl(197 51% 69%);
     --text-on-brand-dark: hsl(var(--brand-hue) 5% 95%);
 
-    --border-color-dark:  hsl(var(--brand-hue) 10% 50% / 15%);
+    --border-color-dark: hsl(var(--brand-hue) 10% 50% / 15%);
 
     --surface-1-dark: hsl(206 97% 15%);
     --surface-2-dark: hsl(205 98% 20%);
@@ -50,7 +74,7 @@
 
     --border-radius: 1px;
     --border-color: var(--border-color-dark);
-    
+
     --popper-theme-background-color: var(--surface-3);
     --popper-theme-background-color-hover: var(--surface-4);
     --popper-theme-text-color: var(--text-2);
@@ -68,7 +92,7 @@ html {
     font-size: 10px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-family: Oxygen, Avenir;
 }
 
 body {
@@ -85,6 +109,7 @@ html, body, #app {
     text-align: left;
     font-size: 1.5rem;
     word-break: break-word;
+    font-weight: lighter;
 }
 
 
