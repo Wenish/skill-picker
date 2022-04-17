@@ -48,14 +48,15 @@
     --surface-3: var(--surface-3-dark);
     --surface-4: var(--surface-4-dark);
 
-    --border-radius: 2px;
+    --border-radius: 1px;
     --border-color: var(--border-color-dark);
     
     --popper-theme-background-color: var(--surface-3);
     --popper-theme-background-color-hover: var(--surface-4);
     --popper-theme-text-color: var(--text-2);
-    --popper-theme-border-width: 0px;
+    --popper-theme-border-width: 1px;
     --popper-theme-border-style: solid;
+    --popper-theme-border-color: var(--border-color);
     --popper-theme-border-radius: var(--border-radius);
     --popper-theme-padding: 1rem;
     --popper-theme-box-shadow: 0 6px 30px -6px rgba(0, 0, 0, 0.7);

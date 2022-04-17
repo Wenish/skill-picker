@@ -1,7 +1,6 @@
 import { defineStore } from "pinia";
 import { computed, reactive } from "vue";
 import { mockSkills, Skill, SkillType } from "../data/mockSkills";
-import { useSkillSlotsStore } from "./skillSlots.store";
 
 export const useSkillsStore = defineStore(
     'skills',

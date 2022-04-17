@@ -70,11 +70,12 @@ const getImageUrl = (name: string) => {
 .skill-list {
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--border-color);
     height: 350px;
     overflow-y: scroll;
     overflow-x: hidden;
+    border: 1px solid var(--border-color);
     background-color: var(--surface-2);
+    border-radius: var(--border-radius);
 }
 
 .skill-list-item {
@@ -117,6 +118,7 @@ const getImageUrl = (name: string) => {
     padding: 2rem;
     background-color: var(--surface-2);
     border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
 }
 
 .skill-slot {
@@ -127,6 +129,7 @@ const getImageUrl = (name: string) => {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: var(--border-radius);
 }
 
 .skill-slot:hover {
@@ -137,6 +140,7 @@ const getImageUrl = (name: string) => {
 .skill-slot > img {
     width: 100%;
     height: 100%;
+    border-radius: var(--border-radius);
 }
 
 .skill-slot.selected {
