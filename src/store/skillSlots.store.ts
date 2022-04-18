@@ -53,17 +53,19 @@ export const useSkillSlotsStore = defineStore(
                 }
             })
             skillSlots.value[skillSlotIndex].skillId = skillId
-            /*
-            if(selectedSkillSlotIndex.value < skillSlots.value.length - 1) {
-                selectedSkillSlotIndex.value++
+
+            const slotIndexWithNoSkill = skillSlots.value.findIndex((skillSlot) => !skillSlot.skillId)
+            if(slotIndexWithNoSkill != -1) {
+                selectedSkillSlotIndex.value = slotIndexWithNoSkill
             }
-            */
         }
 
         const resetSkillSelection = () => {
             skillSlots.value.forEach((skillSlot) => {
                 skillSlot.skillId = null
             })
+
+            selectedSkillSlotIndex.value = 0
         }
 
         return {
