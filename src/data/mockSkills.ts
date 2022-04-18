@@ -322,5 +322,16 @@ export const mockSkills: Skill[] = [
         icon: 'Pin_Down.jpg',
         maxCharges: 2,
         costs: 0
+    },
+
+    {
+        id: '29',
+        title: 'Quickness',
+        description: 'Move 5% faster.',
+        cooldown: 0,
+        type: SkillType.PASSIVE,
+        icon: 'Critical_Agility.jpg',
+        maxCharges: 0,
+        costs: 0
     }
 ]
