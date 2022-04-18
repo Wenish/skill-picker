@@ -11,6 +11,12 @@
                         <img :src="getImageUrl(skill.icon)" />
                     </div>
                     <div class="skill-list-item-title">{{ skill.title }}</div>
+                    <div class="skill-list-item-max-charges">
+                        <span v-for="maxCharge in skill.maxCharges">&#10073;</span>
+                    </div>
+                    <div class="skill-list-item-max-cost">
+                        <span v-for="cost in skill.cost">&#9670;</span>
+                    </div>
                     <div class="skill-list-item-cooldown"><span v-if="skill.cooldown">{{ skill.cooldown }}&#9735;</span></div>
                 </div>
                 </Popper>
@@ -80,7 +86,7 @@ const getImageUrl = (name: string) => {
 
 .skill-list-item {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr auto auto auto;
     justify-content: center;
     gap: 0.2rem;
     align-items: center;
