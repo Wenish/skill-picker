@@ -333,5 +333,16 @@ export const mockSkills: Skill[] = [
         icon: 'Critical_Agility.jpg',
         maxCharges: 0,
         costs: 0
+    },
+
+    {
+        id: '30',
+        title: 'Assassin Promise',
+        description: 'Shadow Step a short distance in the direction you are facing. Casting again: return to your original location',
+        cooldown: 60,
+        type: SkillType.ULTIMATE,
+        icon: 'Assassin_Promise.jpg',
+        maxCharges: 1,
+        costs: 3
     }
 ]
