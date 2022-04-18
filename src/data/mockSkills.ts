@@ -12,7 +12,7 @@ export interface Skill {
     type: SkillType
     icon: string
     maxCharges: number
-    cost: number
+    costs: number
 }
 
 export const mockSkills: Skill[] = [
@@ -24,7 +24,7 @@ export const mockSkills: Skill[] = [
         type: SkillType.NORMAL,
         icon: 'Heal_Party.jpg',
         maxCharges: 1,
-        cost: 0
+        costs: 0
     },
 
     {
@@ -35,7 +35,7 @@ export const mockSkills: Skill[] = [
         type: SkillType.NORMAL,
         icon: 'Reversal_of_Fortune.jpg',
         maxCharges: 1,
-        cost: 0
+        costs: 0
     },
 
     {
@@ -46,7 +46,7 @@ export const mockSkills: Skill[] = [
         type: SkillType.NORMAL,
         icon: 'Shielding_Hands.jpg',
         maxCharges: 2,
-        cost: 0
+        costs: 0
     },
 
     {
@@ -57,7 +57,7 @@ export const mockSkills: Skill[] = [
         type: SkillType.ULTIMATE,
         icon: 'Word_of_Healing.jpg',
         maxCharges: 1,
-        cost: 3
+        costs: 3
     },
 
     {
@@ -68,7 +68,7 @@ export const mockSkills: Skill[] = [
         type: SkillType.NORMAL,
         icon: 'Armor_of_Earth.jpg',
         maxCharges: 1,
-        cost: 0
+        costs: 0
     },
 
     {
@@ -79,7 +79,7 @@ export const mockSkills: Skill[] = [
         type: SkillType.ULTIMATE,
         icon: 'Light_of_Deliverance.jpg',
         maxCharges: 1,
-        cost: 5
+        costs: 5
     },
 
     {
@@ -89,8 +89,8 @@ export const mockSkills: Skill[] = [
         cooldown: 0,
         type: SkillType.PASSIVE,
         icon: 'Arcane_Mimicry.jpg',
-        maxCharges: 1,
-        cost: 0
+        maxCharges: 0,
+        costs: 0
     },
 
     {
@@ -100,8 +100,8 @@ export const mockSkills: Skill[] = [
         cooldown: 0,
         type: SkillType.PASSIVE,
         icon: 'Aegis.jpg',
-        maxCharges: 1,
-        cost: 0
+        maxCharges: 0,
+        costs: 0
     },
 
     {
@@ -112,7 +112,7 @@ export const mockSkills: Skill[] = [
         type: SkillType.NORMAL,
         icon: 'Bloodsong.jpg',
         maxCharges: 1,
-        cost: 0
+        costs: 0
     },
 
     {
@@ -123,7 +123,7 @@ export const mockSkills: Skill[] = [
         type: SkillType.NORMAL,
         icon: 'Dash.jpg',
         maxCharges: 2,
-        cost: 0
+        costs: 0
     },
 
     {
@@ -134,7 +134,7 @@ export const mockSkills: Skill[] = [
         type: SkillType.NORMAL,
         icon: 'Critical_Eye.jpg',
         maxCharges: 2,
-        cost: 0
+        costs: 0
     },
 
     {
@@ -145,7 +145,7 @@ export const mockSkills: Skill[] = [
         type: SkillType.ULTIMATE,
         icon: 'Animate_Flesh_Golem.jpg',
         maxCharges: 1,
-        cost: 4
+        costs: 4
     },
 
     {
@@ -156,7 +156,7 @@ export const mockSkills: Skill[] = [
         type: SkillType.NORMAL,
         icon: 'Blackout.jpg',
         maxCharges: 1,
-        cost: 0
+        costs: 0
     },
 
     {
@@ -166,8 +166,8 @@ export const mockSkills: Skill[] = [
         cooldown: 30,
         type: SkillType.PASSIVE,
         icon: 'Signet_of_Return.jpg',
-        maxCharges: 1,
-        cost: 0
+        maxCharges: 0,
+        costs: 0
     },
 
     {
@@ -178,7 +178,7 @@ export const mockSkills: Skill[] = [
         type: SkillType.ULTIMATE,
         icon: 'Grenths_Grasp.jpg',
         maxCharges: 1,
-        cost: 3
+        costs: 3
     },
 
     {
@@ -188,8 +188,8 @@ export const mockSkills: Skill[] = [
         cooldown: 0,
         type: SkillType.PASSIVE,
         icon: 'Sundering_Weapon.jpg',
-        maxCharges: 1,
-        cost: 0
+        maxCharges: 0,
+        costs: 0
     },
 
     {
@@ -200,7 +200,7 @@ export const mockSkills: Skill[] = [
         type: SkillType.NORMAL,
         icon: 'Smoke_Powder_Defense.jpg',
         maxCharges: 2,
-        cost: 0
+        costs: 0
     },
 
     {
@@ -211,7 +211,7 @@ export const mockSkills: Skill[] = [
         type: SkillType.NORMAL,
         icon: 'Assassin_Remedy.jpg',
         maxCharges: 2,
-        cost: 0
+        costs: 0
     },
 
     {
@@ -222,7 +222,7 @@ export const mockSkills: Skill[] = [
         type: SkillType.NORMAL,
         icon: 'Essence_Strike.jpg',
         maxCharges: 1,
-        cost: 0
+        costs: 0
     },
 
     {
@@ -233,7 +233,7 @@ export const mockSkills: Skill[] = [
         type: SkillType.NORMAL,
         icon: 'Caltrops.jpg',
         maxCharges: 2,
-        cost: 0
+        costs: 0
     },
 
     {
@@ -244,7 +244,7 @@ export const mockSkills: Skill[] = [
         type: SkillType.ULTIMATE,
         icon: 'Preservation.jpg',
         maxCharges: 1,
-        cost: 3
+        costs: 3
     },
 
     {
@@ -255,7 +255,7 @@ export const mockSkills: Skill[] = [
         type: SkillType.ULTIMATE,
         icon: 'Shadow_Form.jpg',
         maxCharges: 1,
-        cost: 2
+        costs: 2
     },
 
     {
@@ -265,8 +265,8 @@ export const mockSkills: Skill[] = [
         cooldown: 0,
         type: SkillType.PASSIVE,
         icon: 'Vital_Weapon.jpg',
-        maxCharges: 1,
-        cost: 0
+        maxCharges: 0,
+        costs: 0
     },
 
     {
@@ -277,7 +277,7 @@ export const mockSkills: Skill[] = [
         type: SkillType.NORMAL,
         icon: 'Ghostmirror_Light.jpg',
         maxCharges: 1,
-        cost: 0
+        costs: 0
     },
 
     {
@@ -287,8 +287,8 @@ export const mockSkills: Skill[] = [
         cooldown: 0,
         type: SkillType.PASSIVE,
         icon: 'Apply_Poison.jpg',
-        maxCharges: 1,
-        cost: 0
+        maxCharges: 0,
+        costs: 0
     },
 
     {
@@ -299,7 +299,7 @@ export const mockSkills: Skill[] = [
         type: SkillType.ULTIMATE,
         icon: 'Barrage.jpg',
         maxCharges: 1,
-        cost: 3
+        costs: 3
     },
 
     {
@@ -310,7 +310,7 @@ export const mockSkills: Skill[] = [
         type: SkillType.NORMAL,
         icon: 'Dodge.jpg',
         maxCharges: 2,
-        cost: 0
+        costs: 0
     },
 
     {
@@ -321,6 +321,6 @@ export const mockSkills: Skill[] = [
         type: SkillType.NORMAL,
         icon: 'Pin_Down.jpg',
         maxCharges: 2,
-        cost: 0
+        costs: 0
     }
 ]

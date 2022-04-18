@@ -4,45 +4,61 @@
         <div>
             <div class="skill-list-title">{{ skillSlotsStore.getSelectedSkillSlot?.type }}</div>
             <div class="skill-list">
-                <Popper hover v-for="skill in skillSlotsStore.getSelectedSkillSlotSkills" :key="skill.id" :content="`${skill.title} - ${skill.description}`" arrow>
-                <div class="skill-list-item"
-                    @click="skillSlotsStore.selectSkill(skillSlotsStore.selectedSkillSlotIndex, skill.id)">
-                    <div class="skill-list-item-image">
-                        <img :src="getImageUrl(skill.icon)" />
+                <Popper hover v-for="skill in skillSlotsStore.getSelectedSkillSlotSkills" :key="skill.id" arrow>
+                    <div class="skill-list-item"
+                        @click="skillSlotsStore.selectSkill(skillSlotsStore.selectedSkillSlotIndex, skill.id)">
+                        <div class="skill-list-item-image">
+                            <img :src="getImageUrl(skill.icon)" />
+                        </div>
+                        <div class="skill-list-item-title">{{ skill.title }}</div>
                     </div>
-                    <div class="skill-list-item-title">{{ skill.title }}</div>
-                    <div class="skill-list-item-max-charges">
-                        <span v-for="maxCharge in skill.maxCharges">&#10073;</span>
-                    </div>
-                    <div class="skill-list-item-max-cost">
-                        <span v-for="cost in skill.cost">&#9670;</span>
-                    </div>
-                    <div class="skill-list-item-cooldown"><span v-if="skill.cooldown">{{ skill.cooldown }}&#9735;</span></div>
-                </div>
+                    <template #content>
+                        <SkillTooltip
+                            :title="skill.title"
+                            :description="skill.description"
+                            :maxCharges="skill.maxCharges"
+                            :costs="skill.costs"
+                            :cooldown="skill.cooldown"
+                        />
+                    </template>
                 </Popper>
             </div>
         </div>
         <div class="skill-slots">
-            <Popper v-for="(skillSlot, index) in skillSlotsStore.skillSlots" :key="index" hover :disabled="!skillStore.getSkillById(skillSlot.skillId || '')?.title" :content="`${skillStore.getSkillById(skillSlot.skillId || '')?.title || ''} - ${skillStore.getSkillById(skillSlot.skillId || '')?.description || ''}`" arrow>
+            <Popper v-for="(skillSlot, index) in skillSlotsStore.skillSlots" :key="index" hover
+                :disabled="!skillStore.getSkillById(skillSlot.skillId || '')?.title"
+                arrow>
                 <div :class="['skill-slot', skillSlot.type.toLowerCase(), { selected: skillSlotsStore.selectedSkillSlotIndex == index }]"
                     @click="skillSlotsStore.selectedSkillSlotIndex = index">
-                    <img :src="getImageUrl(skillStore.getSkillById(skillSlot.skillId).icon)" v-if="skillSlot.skillId"/>
+                    <img :src="getImageUrl(skillStore.getSkillById(skillSlot.skillId).icon)" v-if="skillSlot.skillId" />
                 </div>
+                <template #content>
+                    <SkillTooltip
+                        :title="skillStore.getSkillById(skillSlot.skillId || '')?.title"
+                        :description="skillStore.getSkillById(skillSlot.skillId || '')?.description"
+                        :maxCharges="skillStore.getSkillById(skillSlot.skillId || '')?.maxCharges"
+                        :costs="skillStore.getSkillById(skillSlot.skillId || '')?.costs"
+                        :cooldown="skillStore.getSkillById(skillSlot.skillId || '')?.cooldown"
+                    />
+                </template>
             </Popper>
         </div>
         <button @click="skillSlotsStore.resetSkillSelection()">Reset skill selection</button>
     </div>
 </template>
 <script setup lang="ts">
+import { defineAsyncComponent } from "vue";
 import Popper from "vue3-popper";
 import { useSkillsStore } from '../store/skills.store';
 import { useSkillSlotsStore } from '../store/skillSlots.store';
+
+const SkillTooltip = defineAsyncComponent(() => import('./SkillTooltip.vue'))
 
 const skillStore = useSkillsStore()
 const skillSlotsStore = useSkillSlotsStore()
 
 const getImageUrl = (name: string) => {
-  return new URL(`../assets/skillIcons/${name}`, import.meta.url).href
+    return new URL(`../assets/skillIcons/${name}`, import.meta.url).href
 }
 </script>
 <style scoped>
@@ -86,7 +102,7 @@ const getImageUrl = (name: string) => {
 
 .skill-list-item {
     display: grid;
-    grid-template-columns: auto 1fr auto auto auto;
+    grid-template-columns: auto 1fr;
     justify-content: center;
     gap: 0.2rem;
     align-items: center;
@@ -112,7 +128,7 @@ const getImageUrl = (name: string) => {
     background-color: var(--surface-3);
 }
 
-.skill-list-item-image > img {
+.skill-list-item-image>img {
     width: 100%;
     height: 100%;
 }
@@ -143,7 +159,7 @@ const getImageUrl = (name: string) => {
     background-color: var(--surface-4);
 }
 
-.skill-slot > img {
+.skill-slot>img {
     width: 100%;
     height: 100%;
     border-radius: var(--border-radius);
